@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var name: String = ""
     @State var num: Int = 0
     var body: some View {
         Button(action:{
@@ -19,6 +20,13 @@ struct ContentView: View {
             
         }
         Text("\(num)")
+        
+        VStack {
+            TextField("name?", text: $name)
+            if (!name.isEmpty) {
+                Text("Hello \(name)")
+            }
+        }
     }
 }
 
